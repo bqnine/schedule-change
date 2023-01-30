@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <link rel="stylesheet" href="cos.css">
+    <title>Change of Schedule</title>
+</head>
+<body>
+    <h1>Overtime and Change of Schedule Request Form</h1><br>
+    <h2>Week of: <span class="pad"><input type="date" id="desiredWeek" value="2023-01-01" name="birthday"></span></h2>
+    <div>
+        <table>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+              </tr>
+            <tr class="setbold">
+              <td id="sun"></td>
+              <td id="mon"></td>
+              <td id="tue"></td>
+              <td id="wed"></td>
+              <td id="thu"></td>
+              <td id="fri"></td>
+              <td id="sat"></td>
+            </tr>
+            <tr class="setbold">
+                <td id="day0"></td>
+                <td id="day1"></td>
+                <td id="day2"></td>
+                <td id="day3"></td>
+                <td id="day4"></td>
+                <td id="day5"></td>
+                <td id="day6"></td>
+            </tr>
+            <tr>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+            </tr>
+          </table>
+          <br>
+          <h1 id="submittext">*** This form <span class="must">MUST</span> be submitted no later than<span class="must"> 12 PM Thursday</span> the week prior to your desired schedule change ***</h1>
+    </div>
+    <div>
+        <h3>Name:<span class="pad"><input id="name" type="text"/></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Employee #:<span class="pad"><input id="empnum" type="text"/></span> </h3>
+    </div>
+    <br><br>
+    <div> 
+        <label for="boro">Location:</label>
+            <select name="boro" id="boro" onchange="selection()">
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Queens">Queens</option>
+            </select> &nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="shift">Select Shift:</label>
+            <select name="group" id="group">
+                <option value="1">8 hour</option>
+                <option value="2">12 hour</option>
+                <option class="brk" value="3">6-2 Sun-Thu</option>
+                <option value="4">6-2 Mon-Fri</option>
+                <option class="brk" value="5">6-2 Tue-Sat</option>
+                <option class ="brk" value="6">7-3 Sun-Thu</option>
+                <option class="brk" value="7">7-3 Mon-Fri</option>
+                <option class="qns" value="8">8-4 Sun-Thu</option>
+                <option class="qns" value="9">8-4 Mon-Fri</option>
+                <option class="brk" value="10">2-10 Mon-Fri</option>
+                <option class="brk" value="11">3-11 Mon-Fri</option>
+                <option class="qns" value="12">4-12 Sun-Thu</option>
+                <option class="qns" value="13">4-12 Mon-Fri</option>
+                <option class="qns" value="14">4-12 Tue-Sat</option>
+                <option class="qns" value="15">10-6 Mon-Fri</option>
+            </select> &nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="hiderotation"> 
+        <label for="shift">Week in Rotation:</label>
+            <select name="Rotation" id="rotation">
+                <option value="0">Week 1</option>
+                <option value="1">Week 2</option>
+                <option value="2">Week 3</option>
+                <option value="3">Week 4</option>
+                <option value="4">Week 5</option>
+             </select>
+        </span>
+    <br><br><br>
+    </footer>
+    <button onclick="selectWeek()">Click to Update</button>
+    <div id="hidetable">
+        <table class="schedlist">
+            <tr>
+                <th>Rotation</th>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            <tr class="highlight">
+                <td class="highlight setbold">Week 1</td>
+                <td id="week1Sun">OFF</td>
+                <td id="week1Mon">8-4</td>
+                <td id="week1Tue">8-4</td>
+                <td id="week1Wed">8-4</td>
+                <td id="week1Thu">8-4</td>
+                <td id="week1Fri">OFF</td>
+                <td id="week1Sat">OFF</td>
+            </tr>
+            <tr>
+                <td class="setbold">Week 2</td>
+                <td id="week2Sun">OFF</td>
+                <td id="week2Mon">8-4</td>
+                <td id="week2Tue">8-4</td>
+                <td id="week2Wed">8-4</td>
+                <td id="week2Thu">8-4</td>
+                <td id="week2Fri">OFF</td>
+                <td id="week2Sat">OFF</td>
+            </tr>
+            <tr class="highlight">
+                <td class="highlight setbold">Week 3</td>
+                <td id="week3Sun">OFF</td>
+                <td id="week3Mon">8-4</td>
+                <td id="week3Tue">8-4</td>
+                <td id="week3Wed">8-4</td>
+                <td id="week3Thu">8-4</td>
+                <td id="week3Fri">OFF</td>
+                <td id="week3Sat">OFF</td>
+            </tr>
+            <tr>
+                <td class="setbold">Week 4</td>
+                <td id="week4Sun">OFF</td>
+                <td id="week4Mon">8-4</td>
+                <td id="week4Tue">8-4</td>
+                <td id="week4Wed">8-4</td>
+                <td id="week4Thu">8-4</td>
+                <td id="week4Fri">OFF</td>
+                <td id="week4Sat">OFF</td>
+            </tr>
+            <tr class="highlight">
+                <td class="highlight setbold">Week 5</td>
+                <td id="week5Sun">OFF</td>
+                <td id="week5Mon">8-4</td>
+                <td id="week5Tue">8-4</td>
+                <td id="week5Wed">8-4</td>
+                <td id="week5Thu">8-4</td>
+                <td id="week5Fri">OFF</td>
+                <td id="week5Sat">OFF</td>
+            </tr>
+        </table>
+</div>
+<script src="cos.js"></script>
+
+</body>
+</html>

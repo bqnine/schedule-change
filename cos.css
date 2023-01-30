@@ -1,0 +1,72 @@
+
+
+h1 {
+    text-align: center;
+    text-decoration-line: underline;
+    font-weight: bold;
+    
+} 
+
+table {
+    width:90%;
+} 
+
+th {
+    border: 1px solid;
+    margin: auto;
+    text-align: center;
+} 
+
+td {
+    border: 1px solid;
+    margin: auto;
+    text-align: center;
+    width:42px; 
+    height:42px;
+} 
+
+.setbold {
+    font-weight: bold;
+} 
+
+#submittext {
+    color: red;
+    text-decoration-line: none;
+    text-align: left;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 70px;
+}
+ /* applied where "must" class appears in span tags */
+.must {
+    font-size: 50px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* This sets some padding betweek Week of: and the calendar cell */
+ .pad {
+    padding-left: 10px;
+    font-weight: bold;
+} 
+
+button {
+    background-color: lightblue;
+    text-align: center;
+    font-size: 30px;
+    margin-left:90px;
+}
+/* schedlist is the table that shows the schedule at the bottom of the form */
+.schedlist {
+    border-collapse: collapse;
+    margin-top: -40px;
+    margin-left: 23rem;
+    width: 40%;
+}
+
+#group {
+    text-align: center;
+} 
+
+.highlight {
+    background-color: #FFFFcc;
+}
