@@ -70,3 +70,7 @@ button {
 .highlight {
     background-color: #FFFFcc;
 }
+
+#name, #empnum {
+    text-align: center;
+}

@@ -113,10 +113,14 @@ function selection() {
 function checkName() {
     const name = document.getElementById('name').value;
     const numb = document.getElementById('empnum').value;
-    if (name.length < 1 || numb.length < 1) {
+    const letters = /^[0-9]/;
+    if (name.length < 1 || numb.length !== 5 || isNaN(numb) || name.match(letters)) {
         document.getElementById('name').style.backgroundColor="#FFFF00";
         document.getElementById('empnum').style.backgroundColor="#FFFF00";
-        alert("Please enter your name and employee number!");
+        alert("Please enter your name and a five digit employee number!");
+    } else {
+        document.getElementById('name').style.backgroundColor="white";
+        document.getElementById('empnum').style.backgroundColor="white";
     }
 }
 
